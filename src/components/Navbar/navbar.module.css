@@ -1,0 +1,22 @@
+.navBarContainer {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  background-color: aliceblue;
+}
+
+.navBarContainer ul {
+  padding: 0 10%;
+}
+
+.navBarContainer li {
+  padding: 20px;
+}
+
+.navBarContainer a {
+    color: #e5d8c3;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 1rem;
+    background-color: #292854;
+}

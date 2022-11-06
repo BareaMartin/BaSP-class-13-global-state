@@ -1,0 +1,6 @@
+.sectionContainer {
+    display: flex;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
