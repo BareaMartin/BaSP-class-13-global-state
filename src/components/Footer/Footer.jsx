@@ -1,12 +1,8 @@
-import React from 'react';
-import styles from './footer.module.css';
+import React from "react";
+import styles from "./footer.module.css";
 
 const Footer = () => {
-  return (
-    <div className={styles.footerContainer}>
-        BaSP
-    </div>
-  );
+  return <div className={styles.footerContainer}>BaSP</div>;
 };
 
 export default Footer;
