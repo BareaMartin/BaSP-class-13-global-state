@@ -12,21 +12,27 @@ const Todos = () => {
     },
   ]);
 
+  const filteredTodos = todos.filter((t) => t.done === false).length;
+
   const handleChange = (event) => {
     setTodoDescription(event.target.value);
   };
 
   const addTodo = () => {
-    setTodos((prevState) => {
-      return [
-        ...prevState,
-        {
-          id: uuid(),
-          description: todoDescription,
-          done: false,
-        },
-      ];
-    });
+    if (todoDescription) {
+      setTodos((prevState) => {
+        return [
+          ...prevState,
+          {
+            id: uuid(),
+            description: todoDescription,
+            done: false,
+          },
+        ];
+      });
+      return;
+    }
+    alert("nope");
   };
 
   const toggleDone = (todo) => {
@@ -41,6 +47,7 @@ const Todos = () => {
 
   return (
     <div className={styles.container}>
+      <span className={styles.spanCount}>todo count: {filteredTodos}</span>
       <input value={todoDescription} onChange={handleChange} />
       <button onClick={addTodo}>Add</button>
       <table>
