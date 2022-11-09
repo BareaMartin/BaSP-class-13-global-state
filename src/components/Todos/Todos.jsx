@@ -16,7 +16,11 @@ const Todos = () => {
   return (
     <div className={styles.container}>
       <input value={todoDescription} onChange={handleChange} />
-      <button onClick={() => dispatch(addTodo(todoDescription))}>Add</button>
+      <button
+        onClick={() => todoDescription && dispatch(addTodo(todoDescription))}
+      >
+        Add
+      </button>
       <table>
         <thead>
           <tr>

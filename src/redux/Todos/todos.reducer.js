@@ -11,17 +11,6 @@ const INITIAL_STATE = {
   ],
 };
 
-const addTodo = (description) => {
-  if (description) {
-    return {
-      id: uuid(),
-      description: description,
-      done: false,
-    };
-  }
-  alert("nope");
-};
-
 const reducer = (state = INITIAL_STATE, action) => {
   console.log("reducer activated");
 
@@ -30,7 +19,14 @@ const reducer = (state = INITIAL_STATE, action) => {
       console.log("action ADD_TODO", action.payload);
       return {
         ...state,
-        todos: [...state.todos, addTodo(action.payload)],
+        todos: [
+          ...state.todos,
+          {
+            id: uuid(),
+            description: action.payload,
+            done: false,
+          },
+        ],
       };
     }
 
@@ -41,7 +37,6 @@ const reducer = (state = INITIAL_STATE, action) => {
           ? { id: t.id, description: t.description, done: !t.done }
           : t;
       });
-      console.log("newTodos", newTodos);
       return {
         ...state,
         todos: [...newTodos],
