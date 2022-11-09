@@ -1,4 +1,3 @@
-import React from "react";
 import { Switch, Route } from "react-router-dom";
 import MainLayout from "../components/MainLayout/MainLayout";
 import Home from "../components/Home/Home";
