@@ -8,7 +8,6 @@ const Todos = (props) => {
     setTodoDescription(event.target.value);
   };
 
-  console.log("todos props", props);
   return (
     <div className={styles.container}>
       <input value={todoDescription} onChange={handleChange} />

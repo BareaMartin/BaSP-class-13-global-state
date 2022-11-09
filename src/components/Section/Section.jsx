@@ -9,7 +9,6 @@ const Section = ({ body, toggleDone, addTodo, todos }) => {
     addTodo,
     todos,
   });
-  console.log("Section newBody", { body, newBody });
   return <div className={styles.sectionContainer}>{newBody}</div>;
 };
 
