@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import MyRoutes from "./routes";
+import App from "./routes";
 import reportWebVitals from "./reportWebVitals";
 import "./reset.css";
 import "./index.css";
@@ -12,7 +12,7 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 root.render(
   <React.StrictMode>
     <Router>
-      <MyRoutes />
+      <App />
     </Router>
   </React.StrictMode>
 );
