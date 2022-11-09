@@ -1,18 +1,22 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./todos.module.css";
+import { addTodo, toggleDone } from "../../redux/Todos/todos.actions";
 
-const Todos = (props) => {
+const Todos = () => {
   const [todoDescription, setTodoDescription] = useState("");
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     setTodoDescription(event.target.value);
   };
 
-  console.log("todos props", props);
+  const todos = useSelector((state) => state.todos.todos); // subscription to store
+
   return (
     <div className={styles.container}>
       <input value={todoDescription} onChange={handleChange} />
-      <button onClick={() => props.addTodo(todoDescription)}>Add</button>
+      <button onClick={() => dispatch(addTodo(todoDescription))}>Add</button>
       <table>
         <thead>
           <tr>
@@ -21,11 +25,11 @@ const Todos = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.todos?.map((todo) => {
+          {todos?.map((todo) => {
             return (
               <tr key={todo.id}>
                 <td>{todo.description}</td>
-                <td onClick={() => props.toggleDone(todo)}>
+                <td onClick={() => dispatch(toggleDone(todo))}>
                   {todo.done ? "done" : "todo"}
                 </td>
               </tr>

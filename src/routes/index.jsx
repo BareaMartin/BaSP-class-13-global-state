@@ -4,23 +4,12 @@ import MainLayout from "../components/MainLayout/MainLayout";
 import Home from "../components/Home/Home";
 import Todos from "../components/Todos/Todos";
 
-const Router = ({ todos, filteredTodos, addTodo, toggleDone }) => {
-  // pass props to Todos
+const Router = () => {
   return (
-    <MainLayout filteredTodos={filteredTodos}>
+    <MainLayout>
       <Switch>
         <Route exact path="/" component={() => <Home />} />
-        <Route
-          path="/todos"
-          component={() => (
-            <Todos
-              todos={todos}
-              filteredTodos={filteredTodos}
-              addTodo={addTodo}
-              toggleDone={toggleDone}
-            />
-          )}
-        />
+        <Route path="/todos" component={() => <Todos />} />
       </Switch>
     </MainLayout>
   );

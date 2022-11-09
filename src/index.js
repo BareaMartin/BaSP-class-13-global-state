@@ -5,16 +5,22 @@ import reportWebVitals from "./reportWebVitals";
 import "./reset.css";
 import "./index.css";
 
+// redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 // After
 import { createRoot } from "react-dom/client";
 const container = document.getElementById("root");
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <Router>
+        <App />
+      </Router>
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
