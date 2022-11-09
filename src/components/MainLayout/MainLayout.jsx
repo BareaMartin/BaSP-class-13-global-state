@@ -11,7 +11,7 @@ const MainLayout = (props) => {
     <>
       <Header />
       <div className={styles.navBarSectionContainer}>
-        <Navbar />
+        <Navbar filteredTodos={props.filteredTodos} />
         <Section body={props.children} />
       </div>
       <Footer />

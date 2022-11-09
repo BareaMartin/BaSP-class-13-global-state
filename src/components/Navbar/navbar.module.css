@@ -1,6 +1,8 @@
 .navBarContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 20%;
   background-color: aliceblue;
 }
@@ -14,9 +16,13 @@
 }
 
 .navBarContainer a {
-    color: #e5d8c3;
-    text-decoration: none;
-    padding: 5px 15px;
-    border-radius: 1rem;
-    background-color: #292854;
+  color: #e5d8c3;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 1rem;
+  background-color: #292854;
+}
+
+.spanCount {
+  background-color: #e5d8c3;
 }
