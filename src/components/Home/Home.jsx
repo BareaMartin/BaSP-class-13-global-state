@@ -1,5 +1,4 @@
-const Home = (props) => {
-  console.log("Altas props tiene home", props);
+const Home = () => {
   return <div>Home</div>;
 };
 

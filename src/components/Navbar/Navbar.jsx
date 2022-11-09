@@ -5,7 +5,8 @@ import styles from "./navbar.module.css";
 
 const Navbar = () => {
   const todosCount = useSelector((state) => {
-    return state.todos.todos.filter((t) => !!t.done).length;
+    console.log("state", state);
+    return state.todos.list.filter((t) => !t.done).length;
   }); // subscription to store that filters the todos and gets the length
 
   return (

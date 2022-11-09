@@ -2,7 +2,7 @@ import { ADD_TODO, TOGGLE_DONE } from "./todos.types";
 import { v4 as uuid } from "uuid";
 
 const INITIAL_STATE = {
-  todos: [
+  list: [
     {
       id: uuid(),
       description: "do laundry",
@@ -12,15 +12,13 @@ const INITIAL_STATE = {
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
-  console.log("reducer activated");
-
   switch (action.type) {
     case ADD_TODO: {
       console.log("action ADD_TODO", action.payload);
       return {
         ...state,
-        todos: [
-          ...state.todos,
+        list: [
+          ...state.list,
           {
             id: uuid(),
             description: action.payload,
@@ -32,14 +30,14 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case TOGGLE_DONE: {
       console.log("action TOGGLE_DONE", action.payload);
-      const newTodos = state.todos.map((t) => {
+      const newList = state.list.map((t) => {
         return t.id === action.payload.id
           ? { id: t.id, description: t.description, done: !t.done }
           : t;
       });
       return {
         ...state,
-        todos: [...newTodos],
+        list: [...newList],
       };
     }
 

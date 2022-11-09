@@ -11,7 +11,7 @@ const Todos = () => {
     setTodoDescription(event.target.value);
   };
 
-  const todos = useSelector((state) => state.todos.todos); // subscription to store
+  const todos = useSelector((state) => state.todos.list); // subscription to store
 
   return (
     <div className={styles.container}>
