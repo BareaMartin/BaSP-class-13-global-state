@@ -18,6 +18,9 @@ const Navbar = () => {
         <li>
           <Link to="/todos">Todos</Link>
         </li>
+        <li>
+          <Link to="/users">Users</Link>
+        </li>
       </ul>
       <span className={styles.spanCount}>todo count: {todosCount || 0}</span>
     </div>
