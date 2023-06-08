@@ -1,9 +1,9 @@
 import { ADD_TODO, TOGGLE_DONE } from "./todos.types";
 
-export const addTodo = (description) => {
+export const addTodo = (list) => {
   return {
     type: ADD_TODO,
-    payload: description,
+    payload: list,
   };
 };
 

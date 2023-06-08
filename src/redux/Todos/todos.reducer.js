@@ -1,14 +1,7 @@
 import { ADD_TODO, TOGGLE_DONE } from "./todos.types";
-import { v4 as uuid } from "uuid";
 
 const INITIAL_STATE = {
-  list: [
-    {
-      id: uuid(),
-      description: "do laundry",
-      done: false,
-    },
-  ],
+  list: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -17,14 +10,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       console.log("action ADD_TODO", action.payload);
       return {
         ...state,
-        list: [
-          ...state.list,
-          {
-            id: uuid(),
-            description: action.payload,
-            done: false,
-          },
-        ],
+        list: action.payload,
       };
     }
 
